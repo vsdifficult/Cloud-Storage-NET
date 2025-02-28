@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Hosting;
+﻿﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore; 
 using Microsoft.Extensions.Hosting;
 using Microsoft.AspNetCore.Mvc; 
@@ -17,7 +17,8 @@ namespace UserManagementApp
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
-                    webBuilder.UseStartup<Startup>();
+                    webBuilder.UseStartup<Startup>()
+                              .UseUrls("http://0.0.0.0:80");
                 });
     }
 }

@@ -9471,19 +9471,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Difficult\\.nuget\\packages\\": {}
+    "/home/rootusr/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Difficult\\Documents\\GitHub\\Cloud-Storage-NET\\CloudSt\\CloudSt.csproj",
+      "projectUniqueName": "/home/rootusr/Cloud-Storage-NET/CloudSt/CloudSt.csproj",
       "projectName": "CloudSt",
-      "projectPath": "C:\\Users\\Difficult\\Documents\\GitHub\\Cloud-Storage-NET\\CloudSt\\CloudSt.csproj",
-      "packagesPath": "C:\\Users\\Difficult\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Difficult\\Documents\\GitHub\\Cloud-Storage-NET\\CloudSt\\obj\\",
+      "projectPath": "/home/rootusr/Cloud-Storage-NET/CloudSt/CloudSt.csproj",
+      "packagesPath": "/home/rootusr/.nuget/packages/",
+      "outputPath": "/home/rootusr/Cloud-Storage-NET/CloudSt/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\Difficult\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/home/rootusr/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net9.0"
@@ -9505,7 +9505,7 @@
       "restoreAuditProperties": {
         "enableAudit": "true",
         "auditLevel": "low",
-        "auditMode": "direct"
+        "auditMode": "all"
       },
       "SdkAnalysisLevel": "9.0.100"
     },
@@ -9550,8 +9550,30 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.100-rc.2.24474.11/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Formats.Asn1' 5.0.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-447r-wph3-92pm",
+      "libraryId": "System.Formats.Asn1",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    },
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Text.RegularExpressions' 4.3.0 has a known high severity vulnerability, https://github.com/advisories/GHSA-cmhx-cq75-c4mj",
+      "libraryId": "System.Text.RegularExpressions",
+      "targetGraphs": [
+        "net9.0"
+      ]
+    }
+  ]
 }

@@ -2,19 +2,19 @@ FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build-env
 
 WORKDIR /src 
 
-COPY ["CloudST.csproj", "./"] 
-RUN dotnet restore "CloudST.csproj" 
+COPY ["./CloudSt.csproj", "./"] 
+RUN dotnet restore "CloudSt.csproj" 
 
 COPY . ./  
 
-RUN dotnet build -c Release -o out 
+RUN dotnet build "./CloudSt.csproj" -c Release -o out 
 
 FROM mcr.microsoft.com/dotnet/aspnet:9.0 
 
 WORKDIR /app 
 
-COPY --from=build-env /app/out . 
+COPY --from=build-env /src/out . 
 
 EXPOSE 80 
 
-ENTRYPOINT ["dotnet", "CloudST.dll"]
+ENTRYPOINT ["dotnet", "CloudSt.dll"]
