@@ -28,7 +28,7 @@ namespace CloudST.Database
             try 
             { 
                 _context.Users.Remove(user); 
-                return new JsonResult(new {message = "User added"}); 
+                return new JsonResult(new {message = "User deleted"}); 
             } 
             catch (Exception ex) 
             { 
@@ -59,19 +59,31 @@ namespace CloudST.Database
                 return new JsonResult(new {erorr = ex}); 
             }
         } 
-        public async Task<IActionResult> DeleteFileInBase(Files file)
+        public async Task<IActionResult> DeleteFileInBase(int id)
         { 
             try 
             { 
+                var file = await _context.Files_.FindAsync(id);
                 _context.Files_.Remove(file); 
-                return new JsonResult(new {message = "File added"}); 
+                return new JsonResult(new {message = "File deleted"}); 
             } 
             catch (Exception ex) 
             { 
                 return new JsonResult(new {erorr = ex}); 
             }
         }  
-
+        public async Task<IActionResult> GetFileById(int id )
+        { 
+            try 
+            { 
+                var file = await _context.Files_.FindAsync(id); 
+                return new JsonResult(new {message = file});
+            } 
+            catch (Exception ex) 
+            { 
+                return new JsonResult(new {erorr = ex});
+            }
+        }
 
     }
 }

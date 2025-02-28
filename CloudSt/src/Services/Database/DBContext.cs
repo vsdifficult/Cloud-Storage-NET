@@ -1,5 +1,4 @@
 using Microsoft.EntityFrameworkCore; 
-using Microsoft.AspNetCore.Mvc;
 using CloudST.Models;
 
 namespace CloudST.Database 
@@ -12,7 +11,8 @@ namespace CloudST.Database
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder); 
-            modelBuilder.Entity<User>().HasNoKey(); 
+            modelBuilder.Entity<User>().HasKey(u => u.ID); 
+            modelBuilder.Entity<Files>().HasKey(f => f.ID);
         }
     }
 }

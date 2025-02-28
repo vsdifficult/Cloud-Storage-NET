@@ -1,7 +1,7 @@
 using Microsoft.AspNetCore; 
 using Microsoft.AspNetCore.Mvc; 
 
-namespace CloudCT.Controller
+namespace CloudST.Controller
 { 
     [ApiController] 
     [Route("api/cloud/")] 
@@ -20,6 +20,7 @@ namespace CloudCT.Controller
             { 
                 return StatusCode(500, ex.Message);
             }
-        }
+        } 
+        
     }
 }
