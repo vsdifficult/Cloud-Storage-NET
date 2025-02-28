@@ -11,7 +11,7 @@ public class Startup
 
         services.AddSwaggerGen(c =>
         {
-            c.SwaggerDoc("v1", new OpenApiInfo { Title = "User  Management API", Version = "v1" });
+            c.SwaggerDoc("v1", new OpenApiInfo { Title = "Cloud ST API", Version = "v1" });
         });
     }
 
@@ -36,7 +36,7 @@ public class Startup
         app.UseSwagger();
         app.UseSwaggerUI(c =>
         {
-            c.SwaggerEndpoint("/swagger/v1/swagger.json", "User  Management API V1");
+            c.SwaggerEndpoint("/swagger/v1/swagger.json", "Cloud ST API V1");
             c.RoutePrefix = string.Empty; 
         });
 
