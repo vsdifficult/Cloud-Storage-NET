@@ -1,7 +1,7 @@
 using Microsoft.EntityFrameworkCore; 
 using System.ComponentModel.Design.Serialization;
 using Microsoft.AspNetCore.Mvc; 
-using UsrManagemt.Models; 
+using CloudST.Models; 
 using System.Text.Json.Serialization; 
 using System.Text.Json;
 using CloudST.Database; 
@@ -33,11 +33,11 @@ namespace CloudST.Services
                 return new JsonResult(new {erorr = e}); 
             }
         } 
-        public async Task<IActionResult> DelUser(int id)
+        public async Task<IActionResult> DelUser(User user)
         { 
             try 
             { 
-                await _context.DeleteUser(id); 
+                await _context.DeleteUser(user); 
                 return new JsonResult(new {message = "User has been deleted"}); 
             }
             catch (Exception e)

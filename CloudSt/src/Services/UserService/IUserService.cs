@@ -1,12 +1,12 @@
-using CloudCT.Models;
+using CloudST.Models;
 using Microsoft.AspNetCore.Mvc; 
 
-namespace CloudCT.Services
+namespace CloudST.Services
 { 
     public interface IUserService
     { 
         Task<IActionResult> CreateUser(User user); 
-        Task<IActionResult> DelUser(int id); 
+        Task<IActionResult> DelUser(User user); 
         Task<IActionResult> CheckUser(int id); 
     }
 }

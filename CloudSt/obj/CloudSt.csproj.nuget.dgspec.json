@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/rootusr/Cloud-Storage-NET/CloudSt/CloudSt.csproj": {}
+    "C:\\Users\\Difficult\\Documents\\GitHub\\Cloud-Storage-NET\\CloudSt\\CloudSt.csproj": {}
   },
   "projects": {
-    "/home/rootusr/Cloud-Storage-NET/CloudSt/CloudSt.csproj": {
+    "C:\\Users\\Difficult\\Documents\\GitHub\\Cloud-Storage-NET\\CloudSt\\CloudSt.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/rootusr/Cloud-Storage-NET/CloudSt/CloudSt.csproj",
+        "projectUniqueName": "C:\\Users\\Difficult\\Documents\\GitHub\\Cloud-Storage-NET\\CloudSt\\CloudSt.csproj",
         "projectName": "CloudSt",
-        "projectPath": "/home/rootusr/Cloud-Storage-NET/CloudSt/CloudSt.csproj",
-        "packagesPath": "/home/rootusr/.nuget/packages/",
-        "outputPath": "/home/rootusr/Cloud-Storage-NET/CloudSt/obj/",
+        "projectPath": "C:\\Users\\Difficult\\Documents\\GitHub\\Cloud-Storage-NET\\CloudSt\\CloudSt.csproj",
+        "packagesPath": "C:\\Users\\Difficult\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Difficult\\Documents\\GitHub\\Cloud-Storage-NET\\CloudSt\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/rootusr/.nuget/NuGet/NuGet.Config"
+          "C:\\Users\\Difficult\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net9.0"
@@ -36,7 +36,7 @@
         "restoreAuditProperties": {
           "enableAudit": "true",
           "auditLevel": "low",
-          "auditMode": "all"
+          "auditMode": "direct"
         },
         "SdkAnalysisLevel": "9.0.100"
       },
@@ -45,6 +45,10 @@
           "targetAlias": "net9.0",
           "dependencies": {
             "Microsoft.AspNetCore": {
+              "target": "Package",
+              "version": "[2.3.0, )"
+            },
+            "Microsoft.AspNetCore.Mvc": {
               "target": "Package",
               "version": "[2.3.0, )"
             },
@@ -73,7 +77,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/9.0.100-rc.2.24474.11/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.102/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

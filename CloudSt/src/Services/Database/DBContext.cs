@@ -6,7 +6,8 @@ namespace CloudST.Database
 { 
     public class DataBaseContext : DbContext 
     { 
-        public DbSet<User> Users {get; set; } 
+        public DbSet<User> Users {get; set; }  
+        public DbSet<Files> Files_ {get; set; }
         public DataBaseContext(DbContextOptions<DataBaseContext> options): base (options) {}
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
