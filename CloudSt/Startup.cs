@@ -2,7 +2,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.OpenApi.Models;
-
+using CloudST.Services.StorageS3; 
+using CloudST.Database; 
 public class Startup
 {
     public void ConfigureServices(IServiceCollection services)
@@ -13,9 +14,21 @@ public class Startup
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "Cloud ST API", Version = "v1" });
         });
+        services.AddScoped<IS3Service, S3Service>(); 
+        services.AddScoped<DBService>(); 
+        services.AddCors(
+            options => 
+            { 
+                options.AddPolicy("AllowAll", builder => 
+                    { 
+                        builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyHeader(); 
+                    }
+                ); 
+            }
+        ); 
     }
 
-    public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+    public void Configure(IApplicationBuilder app, Microsoft.AspNetCore.Hosting.IHostingEnvironment env)
     {
         if (env.IsDevelopment())
         {

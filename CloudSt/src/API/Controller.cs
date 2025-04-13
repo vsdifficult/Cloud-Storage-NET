@@ -1,5 +1,8 @@
 using Microsoft.AspNetCore; 
 using Microsoft.AspNetCore.Mvc; 
+using CloudST.Database; 
+using CloudST.Models;
+using CloudST.Services.StorageS3;
 
 namespace CloudST.Controller
 { 
@@ -7,20 +10,49 @@ namespace CloudST.Controller
     [Route("api/cloud/")] 
     public class CloudController : ControllerBase    
     { 
-        public CloudController() {}
+        private readonly DBService dBService; 
+        public CloudController(DBService dB) {dBService = dB; }
         
         [HttpPost("upload")] 
-        public async Task<IActionResult> UploadFile(Microsoft.AspNetCore.Http.IFormFile file) 
+        public async Task<IActionResult> UploadFile(AddFileDTO FileDTO) 
         { 
             try 
             { 
-                return Ok("OK"); 
+                await dBService.AddFile(url: FileDTO.AWS_Link, user_id: FileDTO.User_ID); 
+                try 
+                { 
+                    return Ok("OK");  
+                } 
+                catch (Exception ex) 
+                { 
+                    return StatusCode(500, ex.Message);
+                }
             } 
             catch (Exception ex) 
             { 
                 return StatusCode(500, ex.Message);
             }
         } 
-        
-    }
+        [HttpPost("register")] 
+        public async Task<IActionResult> RegisterUser(UserDTO user)
+        { 
+            try 
+            { 
+                await dBService.CreateUser(user); 
+                try 
+                { 
+                    return Ok(); 
+                }
+                catch (Exception ex) 
+                { 
+                    return StatusCode(500, ex.Message);
+                }
+            }
+            catch (Exception ex) 
+            { 
+                return StatusCode(500, ex.Message);
+            }
+        }
+    } 
+    
 }
