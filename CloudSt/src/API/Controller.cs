@@ -2,7 +2,6 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Mvc; 
 using CloudST.Database; 
 using CloudST.Models;
-using CloudST.Services.StorageS3;
 
 namespace CloudST.Controller
 { 
